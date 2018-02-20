@@ -48,7 +48,8 @@ def setQueen(board, x, y, deep):
 
     # if not found, do nothing.
     if new == None: return
-
+    if new.y != deep: return # preformance optimize
+    
     # set a queen.
     board.pieces.append(new)
 
@@ -66,7 +67,6 @@ def setQueen(board, x, y, deep):
     # set the queen to next position to try another solutions.
     new = nextPiece(prev, board.row)
     if new == None: return
-    if new.y != deep: return # preformance optimization.
     setQueen(board, new.x, new.y, deep)
     
 
@@ -74,7 +74,7 @@ _counting_solutions = 0
 if __name__ == '__main__':
     ts = time.time()
 
-    setQueen(app.Board(size = 8), 0, 0, 0)
+    setQueen(app.Board(size = 11), 0, 0, 0)
 
     te = time.time()
     print('Solutions: ' + str(_counting_solutions))
