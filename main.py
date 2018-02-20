@@ -52,7 +52,7 @@ def setQueen(board, x, y, deep):
 	# if the Queen is the last one, found a solution.
 	if deep == board.row - 1:
 		_counting_solutions += 1
-		#print('Solution ' + str(_counting_solutions) + str(board))
+		print('Solution ' + str(_counting_solutions) + str(board))
 	# else set the next one.
 	else:
 		setQueen(board, 0, pos['y'] + 1, deep + 1)
@@ -69,7 +69,7 @@ def setQueen(board, x, y, deep):
 	setQueen(board, pos['x'], pos['y'], deep)
 
 
-_size = 13
+_size = 8
 _counting_solutions = 0
 _flag_x = [False] * _size
 _flag_1 = [False] * (_size * 2 - 1)
