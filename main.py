@@ -48,7 +48,7 @@ def setQueen(board, x, y, deep):
 
     # if not found, do nothing.
     if new == None: return
-    if new.y != deep: return # preformance optimize
+    if new.y != deep: return # performance optimize
     
     # set a queen.
     board.pieces.append(new)
